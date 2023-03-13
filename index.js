@@ -87,89 +87,9 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-
-// Number of months in array displayed in console log
-// Create var for months
-// var months = finances.length;
-// console.log(`Total Months: ${months}`);
-
-// // Find sum of all 'numbers' in array
-// var totalNetSum = 0;
-// totalNetSum = finances.reduce((accumulator, value) => {
-//   return accumulator + value[1];
-// }, 0);
-
-// console.log(`Total: £${totalNetSum}`);
-
-// var totalNetSum = 0;
-// totalNetSum = finances.reduce((accumulator, value) => {
-//   return accumulator + value[1];
-// }, 0);
-
-// console.log(`Total: £${totalNetSum}`);
+var totalMonths = finances.length;        //Create an variable for total months with the .length attribute
 
 
+console.log("Total months: " + totalMonths); //Console log the number of months
 
 
-var months = finances.length;        //Create an variable for total months with the .length attribute
-// var totalProfitLoss = 0; //duplicate
-
-
-
-
-
-
-
-
-console.log("Total months: " + months);        //Display results in the console
-
-
-//How do I find the net total of Profit/Losses?
-  //Find the sum of the objects in the amounts column
-    //netTotalProfitLoss = the sum amounts of all months
-   
-  var totalProfitLoss = 0;         //Create a variable for net total profit/loss
-
-  for (var i = 0; i < months; i++) {
-
-      totalProfitLoss += finances[i][1];       //Sum up the objects in the amounts column 
-  }
-
-  console.log("Total Profit/Loss: £" + totalProfitLoss); 
-
-  var averageChange = [];
-  var sum = 0;
-  var greatest = ['', 0];
-  var date;
-// **METHOD 1: FOR LOOP*
-// // start with i = 1 to start comparison from the second month
-for (let i = 1; i < months; i++) {
-  let difference = finances[i][1] - finances[i - 1][1];
-  averageChange.push(difference);
-
-  
-}
-
-console.log(averageChange)
-
-
-// this has calculated the amount of difference between the months and listed them out
-
-var totalAverageChange = [116771,-662642,-391430,379920,212354,510239,-428211,-821271,693918,416278,-974163,860159,-1115009,1033048,95318,-308093,99052,-521393,605450,231727,-65187,-702716,177975,-1065544,1926159,-917805,898730,-334262,-246499,-64055,-1529236,1497596,304914,-635801,398319,-183161,-37864,-253689,403655,94168,306877,-83000,210462,-2196167,1465222,-956983,1838447,-468003,-64602,206242,-242155,-449079,315198,241099,111540,365942,-219310,-368665,409837,151210,-110244,-341938,-1212159,683246,-70825,335594,417334,-272194,-236462,657432,-211262,-128237,-1750387,925441,932089,-311434,267252,-1876758,1733696,198551,-665765,693229,-734926,77242,532869];
-var sum = 0
-
-//add all of these figures together to get a total of -196785
-for (var i=0; i<totalAverageChange.length; i++)(
-  sum += totalAverageChange[i]
-)
-
-// divide -196785 byt 85 as this is the amount of months that have been compared then display in console.
-// console.log(Math.round(sum/85))
-
-var average = Math.round((sum / (85)) * 100) / 100;
-
-console.log(average)
-
-var greatestIncrease = []
-
-var greatestDecrease = []

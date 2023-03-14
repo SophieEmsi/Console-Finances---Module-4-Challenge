@@ -105,3 +105,24 @@ for (var i = 0; i < totalMonths; i++) {
 
 console.log("Total Profit/Loss: £" + totalProfitLoss); //Console log the total profit/loss
 
+// calculating difference between months
+
+var differences = [];
+
+for (var i = 1; i < totalMonths; i++) {
+  var difference = finances[i][1] - finances[i - 1][1];
+  differences.push(difference);
+}
+
+
+// Calculating the the total sum of differences
+
+differenceSum = 0;
+for (i = 0; i < differences.length; i++) {
+  differenceSum += differences[i];
+}
+
+var averageChange = differenceSum / (totalMonths - 1);
+
+console.log(`Average Change: £${averageChange.toFixed(2)}`);
+

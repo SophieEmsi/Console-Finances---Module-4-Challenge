@@ -105,24 +105,50 @@ for (var i = 0; i < totalMonths; i++) {
 
 console.log("Total Profit/Loss: £" + totalProfitLoss); //Console log the total profit/loss
 
-// calculating difference between months
+// Difference between months
 
-var differences = [];
+var monthDifferences = [];
 
 for (var i = 1; i < totalMonths; i++) {
   var difference = finances[i][1] - finances[i - 1][1];
-  differences.push(difference);
+  monthDifferences.push(difference);
 }
 
 
-// Calculating the the total sum of differences
+// Total sum of differences
 
 differenceSum = 0;
-for (i = 0; i < differences.length; i++) {
-  differenceSum += differences[i];
+for (i = 0; i < monthDifferences.length; i++) {
+  differenceSum += monthDifferences[i];
 }
 
 var averageChange = differenceSum / (totalMonths - 1);
 
 console.log(`Average Change: £${averageChange.toFixed(2)}`);
+
+// Calculating the greatest increase and decrease in profit loss
+
+var profitIncrease;
+var profitDecrease;
+var profitIncreaseMonth;
+var profitDecreaseMonth;
+
+
+profitIncrease = monthDifferences[0];
+profitDecrease = monthDifferences[0];
+
+for (var i = 0; i < monthDifferences.length; i++) {
+    if (profitIncrease < monthDifferences[i]) {
+      profitIncrease = monthDifferences[i];
+      profitIncreaseMonth = finances[i + 1][0];
+    }
+    if (profitDecrease > monthDifferences[i]) {
+      profitDecrease = monthDifferences[i];
+      profitDecreaseMonth = finances[i + 1][0];
+    }
+  }
+
+
+console.log(`Greatest Increase in Profits: ${profitIncreaseMonth} £${profitIncrease}`);
+console.log(`Greatest Decrease in Profits ${profitDecreaseMonth} £${profitDecrease}`);
 

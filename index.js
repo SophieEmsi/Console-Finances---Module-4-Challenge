@@ -87,9 +87,21 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
+// Total Months:
+
 var totalMonths = finances.length;        //Create an variable for total months with the .length attribute
 
 
 console.log("Total months: " + totalMonths); //Console log the number of months
 
+// Total Profit/Loss
+
+var totalProfitLoss = 0;         //Create a variable for net total profit/loss
+
+for (var i = 0; i < totalMonths; i++) {
+
+    totalProfitLoss += finances[i][1];       //Sum up the objects in the amounts column 
+}
+
+console.log("Total Profit/Loss: £" + totalProfitLoss); //Console log the total profit/loss
 
